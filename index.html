@@ -29,7 +29,21 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <div class="time-blocks">
+          <div class="row row-1"></div>
+          <div class="row row-2"></div>
+          <div class="row row-3"></div>
+          <div class="row row-4"></div>
+          <div class="row row-5"></div>
+          <div class="row row-6"></div>
+          <div class="row row-7"></div>
+          <div class="row row-8"></div>
+          <div class="row row-9"></div>
+          <div class="row row-10"></div>
+          <div class="row row-11"></div>
+          <div class="row row-12"></div>
+          <div class="row row-13"></div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -52,10 +66,33 @@
 
 
         $(document).ready(function(){
+            var currentHour = moment().hours();
+            console.log(currentHour);
             //display time at top using div and moments.js
             $("p")[1].innerHTML= moment().format("MMM Do YYYY")
 
         //set time blocks for standard business hours
+        var timeBlocks = [
+        { time: 7, input: "" },
+        { time: 8, input: "" },
+        { time: 9, input: "Wake up" },
+        { time: 10, input: "" },
+        { time: 11, input: "Go to work" },
+        { time: 12, input: "" },
+        { time: 1, input: "" },
+        { time: 2, input: "" },
+        { time: 3, input: "" },
+        { time: 4, input: "" },
+        { time: 5, input: "" },
+        { time: 6, input: "" },
+        { time: 7, input: "" },
+        { time: 8, input: "" },
+        ]
+        console.log()
+        for (let i = 0; i < timeBlocks.length; i++) 
+        {
+            console.log(timeBlocks[i].time + ":00", timeBlocks[i].input)
+        }
 
         //color code each time block
         //if time block is done set red

@@ -29,7 +29,7 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <div class="time-blocks">
+      <div class="time-block">
           <div class="row row-1"></div>
           <div class="row row-2"></div>
           <div class="row row-3"></div>
@@ -91,7 +91,7 @@
         console.log()
         for (let i = 0; i < timeBlocks.length; i++) 
         {
-            console.log(timeBlocks[i].time + ":00", timeBlocks[i].input)
+            $(".row")[i].innerHTML = timeBlocks[i].time + ":00"
         }
 
         //color code each time block

@@ -79,22 +79,63 @@
         { time: 10, input: "" },
         { time: 11, input: "Go to work" },
         { time: 12, input: "" },
-        { time: 1, input: "" },
-        { time: 2, input: "" },
-        { time: 3, input: "" },
-        { time: 4, input: "" },
-        { time: 5, input: "" },
-        { time: 6, input: "" },
-        { time: 7, input: "" },
-        { time: 8, input: "" },
+        { time: 13, input: "" },
+        { time: 14, input: "" },
+        { time: 15, input: "" },
+        { time: 16, input: "" },
+        { time: 17, input: "" },
+        { time: 18, input: "" },
+        { time: 19, input: "" },
+        { time: 20, input: "" },
         ]
-        console.log()
-        for (let i = 0; i < timeBlocks.length; i++) 
-        {
-            $(".row")[i].innerHTML = timeBlocks[i].time + ":00"
+        for (let i = 0; i <= timeBlocks.length; i++) 
+        {    
+            
+            var timeParsed = [" "]
+            var minutesBlank = ":00"
+            timeParsed[i] = timeBlocks[i].time
+            if (timeParsed[i] > 12 ){
+                timeParsed[i] = parseInt(timeParsed[i]) - 12
+            }
+            $(".row")[i].innerHTML = timeParsed[i] + minutesBlank
+
+            /*
+            if (timeParsed[i] > parseInt(moment().hour())){
+                console.log(JSON.stringify(timeBlocks.time[i]))
+            }
+            else{
+                
+            }
+            */
+
+
+
+
+
         }
+            /*
+            if (timeBlocks[i].time > moment().hour() ){
+                var timeParsed = parseInt(timeBlocks[i].time) - 12
+            }
+            else{
+                timeParsed = timeBlocks[i].time
+            }
+
+            $(".row").innerHTML = timeParsed[i] + ":00"
+            */
+        
+        /*
+        for (let i = 0; i < timeBlocks.length; i++) {
+
+            if(timeBlocks[i].time > moment().hour() ){
+                console.log(timeBlocks[i].time)
+                //$('.time-block')[i].append($('.future'))
+            }
+        }
+        */
 
         //color code each time block
+        
         //if time block is done set red
         //if time block is present set blue 
         // if time block is future set green

@@ -88,31 +88,37 @@
         { time: 19, input: "" },
         { time: 20, input: "" },
         ]
-        for (let i = 0; i <= timeBlocks.length; i++) 
-        {    
-            
-            var timeParsed = [" "]
-            var minutesBlank = ":00"
-            timeParsed[i] = timeBlocks[i].time
-            if (timeParsed[i] > 12 ){
-                timeParsed[i] = parseInt(timeParsed[i]) - 12
-            }
-            $(".row")[i].innerHTML = timeParsed[i] + minutesBlank
+        for(let i = 0; i < timeBlocks.length - 1; i++) {
 
-            /*
-            if (timeParsed[i] > parseInt(moment().hour())){
-                console.log(JSON.stringify(timeBlocks.time[i]))
-            }
-            else{
-                
-            }
-            */
+              var timeParsed = [" "]
+              var minutesBlank = ":00"
+              timeParsed[i] = timeBlocks[i].time
+              if(timeParsed[i] > 12) {
+              timeParsed[i] = parseInt(timeParsed[i]) - 12
+              }
 
-
-
-
+              $(".row")[i].innerHTML = timeParsed[i] + minutesBlank
+              console.log(timeParsed[i] + minutesBlank, timeParsed[i] + minutesBlank)
+                /*
+                if (timeParsed[i] < parseInt(moment().hour())){
+                    console.log(timeBlocks.time[i])
+                }
+               */
 
         }
+
+
+
+
+
+
+            
+
+
+
+
+
+        
             /*
             if (timeBlocks[i].time > moment().hour() ){
                 var timeParsed = parseInt(timeBlocks[i].time) - 12
@@ -135,6 +141,7 @@
         */
 
         //color code each time block
+        
         
         //if time block is done set red
         //if time block is present set blue 
